@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter version="1.0">
+    <filter root="/apps/discoverability/clientlibs"/>
+    <filter root="/apps/discoverability/components"/>
+    <filter root="/apps/discoverability/i18n"/>
+</workspaceFilter>
