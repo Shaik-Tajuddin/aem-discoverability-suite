@@ -6,7 +6,7 @@ It is built locally using Maven and can be tested against a local Quickstart.
 
 ## Modules
 
-- `core`: OSGi bundle. Contains the Java code for backend services, models, and business logic. Uses OSGi for dependency injection, Sling models for exposing content to Sling scripts and JUnit for unit testing.
+- `core`: OSGi bundle. Contains the Java code for backend services, models, and business logic. Uses OSGi for dependency injection, Sling models for exposing content to Sling scripts and JUnit for unit testing. Feature packages: `seo/robots`, `seo/sitemap`, `geo/markdown`, `geo/llm`, `aeo/jsonld` (each with configs/services/servlets as applicable).
 - `dispatcher`: Contains Dispatcher configuration suitable for Adobe Managed Services or on-prem deployments, including caching and security settings.
 - `ui.apps`: FileVault content package. Contains the application code, including components, templates, client libraries, and content structure. Uses HTL as the scripting engine.
 - `ui.apps.structure`: FileVault content package. Empty module that defines the structure of the repository content.

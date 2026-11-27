@@ -1,0 +1,35 @@
+# Reference cache rules for Discoverability Suite.
+# Merge with publish /cache/rules (default allow-all is fine for these GETs).
+# Prefer /enableTTL "1" on the farm so origin Cache-Control is honored.
+#
+# Origin headers (suite defaults):
+#   robots.txt  Cache-Control: public, max-age=1200
+#   sitemap*    Cache-Control: public, max-age=3600
+#   llms.txt    Cache-Control: public, max-age=3600
+#   *.md        Cache-Control: public, max-age=3600
+#   errors      Cache-Control: no-store  (must not be stored as success)
+#
+# Ensure /headers caches at least: Cache-Control, Content-Type, Expires
+# (already present in AMS publish farm).
+
+# Explicit allows (optional when /0000 allow * is present)
+/0210 {
+	/glob "*.robots.txt"
+	/type "allow"
+}
+/0211 {
+	/glob "*.llms.txt"
+	/type "allow"
+}
+/0212 {
+	/glob "*.sitemap.xml"
+	/type "allow"
+}
+/0213 {
+	/glob "*.sitemap.*.xml"
+	/type "allow"
+}
+/0214 {
+	/glob "*.md"
+	/type "allow"
+}

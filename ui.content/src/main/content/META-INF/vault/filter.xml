@@ -1,11 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <workspaceFilter version="1.0">
     <filter root="/conf/discoverability" mode="merge"/>
-    <filter root="/content/discoverability" mode="merge"/>
-    <filter root="/content/dam/discoverability" mode="merge">
-        <exclude pattern="/content/dam/discoverability(/.*)?"/>
-        <include pattern="/content/dam/discoverability/jcr:content(/.*)?"/>
-    </filter>
-    <filter root="/content/dam/discoverability/asset.jpg" mode="merge"/>
-    <filter root="/content/experience-fragments/discoverability" mode="merge"/>
 </workspaceFilter>

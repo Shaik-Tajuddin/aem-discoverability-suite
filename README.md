@@ -46,6 +46,20 @@ Or to deploy only a single content package, run in the sub-module directory (i.e
 
 The build process also generates documentation in the form of README.md files in each module directory for easy reference. Depending on the options you select at build time, the content may be customized to your project.
 
+### Discoverability feature guides
+
+Authoring guides and example outputs for each suite feature:
+
+| Feature | Guide |
+|---|---|
+| Feature index | [docs/features/README.md](docs/features/README.md) |
+| robots.txt | [docs/features/robots/README.md](docs/features/robots/README.md) |
+| XML sitemap | [docs/features/sitemap/README.md](docs/features/sitemap/README.md) |
+| Page Markdown | [docs/features/markdown/README.md](docs/features/markdown/README.md) |
+| llms.txt | [docs/features/llms/README.md](docs/features/llms/README.md) |
+
+Related docs: [docs/ENABLEMENT.md](docs/ENABLEMENT.md) · [CHANGELOG.md](CHANGELOG.md) · [docs/plan/](docs/plan/) · [AGENTS.md](AGENTS.md)
+
 ## Testing
 
 There are three levels of testing contained in the project:

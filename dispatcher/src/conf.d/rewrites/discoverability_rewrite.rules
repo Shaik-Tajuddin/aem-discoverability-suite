@@ -1,6 +1,17 @@
-# rewrite for root redirect
-RewriteRule ^/?$ /content/${CONTENT_FOLDER_NAME}/us/en.html [PT,L]
+# Discoverability Suite — public route rewrites (reference; tune CONTENT_FOLDER_NAME).
+# Maps vanity root files to cq:Page selector/extension endpoints on the project root.
+# Do not expose /bin or OSGi servlet paths.
 
+# Public → Publish resource
+RewriteRule ^/robots\.txt$ /content/${CONTENT_FOLDER_NAME}.robots.txt [NC,PT,L]
+RewriteRule ^/llms\.txt$ /content/${CONTENT_FOLDER_NAME}.llms.txt [NC,PT,L]
+RewriteRule ^/sitemap\.xml$ /content/${CONTENT_FOLDER_NAME}.sitemap.xml [NC,PT,L]
+RewriteRule ^/sitemap-([0-9]+)\.xml$ /content/${CONTENT_FOLDER_NAME}.sitemap.$1.xml [NC,PT,L]
+
+# Root redirect (site home)
+RewriteRule ^/?$ /content/${CONTENT_FOLDER_NAME}.html [PT,L]
+
+# Short paths for HTML + Markdown under the project (skip system trees)
 RewriteCond %{REQUEST_URI} !^/apps
 RewriteCond %{REQUEST_URI} !^/bin
 RewriteCond %{REQUEST_URI} !^/content
@@ -11,5 +22,5 @@ RewriteCond %{REQUEST_URI} !^/saml_login
 RewriteCond %{REQUEST_URI} !^/system
 RewriteCond %{REQUEST_URI} !^/tmp
 RewriteCond %{REQUEST_URI} !^/var
-RewriteCond %{REQUEST_URI} (.html|.jpe?g|.png|.svg)$
+RewriteCond %{REQUEST_URI} \.(html|md|jpe?g|png|svg)$
 RewriteRule ^/(.*)$ /content/${CONTENT_FOLDER_NAME}/$1 [PT,L]

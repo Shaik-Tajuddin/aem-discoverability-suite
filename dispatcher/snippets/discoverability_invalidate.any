@@ -1,0 +1,26 @@
+# Reference /cache/invalidate additions for Discoverability Suite.
+# AMS publish farm invalidates *.html on any activation by default.
+# Root discovery files are not .html — add these globs so activation
+# of content under the project also marks them stale (with /enableTTL,
+# max-age still bounds residual CDN/Dispatcher staleness).
+
+/0210 {
+	/glob "*.robots.txt"
+	/type "allow"
+}
+/0211 {
+	/glob "*.llms.txt"
+	/type "allow"
+}
+/0212 {
+	/glob "*.sitemap.xml"
+	/type "allow"
+}
+/0213 {
+	/glob "*.sitemap.*.xml"
+	/type "allow"
+}
+/0214 {
+	/glob "*.md"
+	/type "allow"
+}
