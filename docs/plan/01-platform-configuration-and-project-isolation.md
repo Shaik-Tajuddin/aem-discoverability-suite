@@ -2,7 +2,7 @@
 
 **Feature area:** Platform foundation  
 **Audience:** AEM architects, AEM administrators, configuration owners  
-**Status:** Design guide — implementation not yet authorized
+**Status:** Phase 1 implemented (2026-11-27) — see `tasks/plan.md`
 
 ## 1. Purpose
 

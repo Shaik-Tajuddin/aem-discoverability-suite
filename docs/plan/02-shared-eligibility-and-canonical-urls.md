@@ -2,7 +2,7 @@
 
 **Feature area:** Shared content-processing engine  
 **Audience:** Authors, SEO owners, AEM administrators, developers  
-**Status:** Design guide — implementation not yet authorized
+**Status:** Phase 2 implemented (2026-11-27) — see `tasks/plan.md` / CHANGELOG field contract
 
 ## 1. Purpose
 

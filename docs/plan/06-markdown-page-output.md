@@ -3,7 +3,7 @@
 **Feature area:** GEO / content representation  
 **Audience:** Content authors, content architects, AEM developers  
 **Generation:** On-demand, Publish-side  
-**Status:** Design guide — implementation not yet authorized
+**Status:** Phase 6 implemented (2026-11-27) — see `tasks/plan.md` / CHANGELOG
 
 ## 1. Purpose
 

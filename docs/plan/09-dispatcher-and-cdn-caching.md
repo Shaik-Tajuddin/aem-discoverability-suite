@@ -2,7 +2,7 @@
 
 **Feature area:** Delivery and operations  
 **Audience:** AEM administrators, Dispatcher/CDN administrators, release engineers  
-**Status:** Design guide — implementation not yet authorized
+**Status:** Phase 9 implemented (2026-11-27) — see `tasks/plan.md` / CHANGELOG / `dispatcher/snippets/`
 
 ## 1. Purpose
 
@@ -104,17 +104,23 @@ References:
 - Test configuration changes as well as page activations.
 - Document stale-serving expectations during Publish outages.
 
-## 8. Freshness matrix template
+## 8. Freshness matrix (v1 reference)
 
-Complete this table during implementation design and deployment review:
+Assumes publish farm `/enableTTL "1"`, invalidate globs from `dispatcher/snippets/discoverability_invalidate.any`, and CDN that respects origin `Cache-Control` (or uses the listed CDN TTL). CDN purge is manual/ops in v1.
 
 | Output | Publish change trigger | Dispatcher behavior | CDN behavior | Maximum expected stale period |
 |---|---|---|---|---|
-| robots.txt | Config publish | TBD | TBD | TBD |
-| sitemap | Page activation/config publish | TBD | TBD | TBD |
-| Markdown | Page activation/config publish | TBD | TBD | TBD |
-| llms.txt | Page/config publish | TBD | TBD | TBD |
-| HTML JSON-LD | Page activation | Existing HTML policy | Existing CDN policy | TBD |
+| robots.txt | CA Config publish (robots/platform) | Invalidate `*.robots.txt`; TTL from `max-age=1200` | TTL ≤ 1,200s or purge | ~1,200s (+ CDN if longer than origin) |
+| sitemap | Page activate/deactivate/move; sitemap/config publish | Invalidate `*.sitemap*.xml`; TTL `max-age=3600` | TTL ≤ 3,600s or purge | ~3,600s (+ CDN) |
+| Markdown | Page activate/deactivate; markdown/config publish | Invalidate `*.md` for that path; TTL `max-age=3600` | TTL ≤ 3,600s or purge | ~3,600s (+ CDN) |
+| llms.txt | Page activate/deactivate; llms/config publish | Invalidate `*.llms.txt`; TTL `max-age=3600` | TTL ≤ 3,600s or purge | ~3,600s (+ CDN) |
+| HTML JSON-LD | Page activation (HTML body) | Existing `*.html` invalidate | Existing HTML CDN policy | Existing HTML SLA |
+
+**Notes**
+
+- Origin errors use `Cache-Control: no-store` — do not treat as cacheable 200s.
+- Without `/enableTTL`, Dispatcher may keep files until activation invalidation only; root vanity files still need the invalidate globs above.
+- `serveStaleOnError` may serve last good body during Publish outages — document as intentional stale.
 
 ## 9. Troubleshooting
 
@@ -129,12 +135,14 @@ Complete this table during implementation design and deployment review:
 
 ## 10. Release checklist
 
-- [ ] Exact routes permitted by Dispatcher filters.
+Use with `dispatcher/snippets/ENABLEMENT.md`.
+
+- [ ] Exact routes permitted by Dispatcher filters (`discoverability_filters.any` merged).
 - [ ] Unintended servlet paths remain blocked.
 - [ ] Cache-Control policy verified on origin, Dispatcher, and CDN.
 - [ ] CDN cache key is project/host aware.
 - [ ] Activation and config-publish freshness tested.
-- [ ] Error response caching reviewed.
+- [ ] Error response caching reviewed (`no-store` / CDN 4xx policy).
 - [ ] Rollback plan documented.
 - [ ] Existing project rules preserved.
 

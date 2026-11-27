@@ -3,7 +3,7 @@
 **Feature area:** AEO / structured data  
 **Audience:** Content authors, SEO owners, AEM developers  
 **Generation:** Publish-side graph construction and HTML head contribution  
-**Status:** Design guide — implementation not yet authorized
+**Status:** Phase 8 implemented (2026-11-27) — see `tasks/plan.md` / CHANGELOG
 
 ## 1. Purpose
 

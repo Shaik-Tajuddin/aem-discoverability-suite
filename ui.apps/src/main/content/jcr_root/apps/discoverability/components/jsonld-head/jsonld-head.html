@@ -1,0 +1,8 @@
+<!--/*
+  HTL fallback: include from page head (customheaderlibs) when rewriter is not wired.
+  Emits at most one application/ld+json script per request.
+*/-->
+<sly data-sly-use.model="com.aem.discoverability.core.aeo.jsonld.models.JsonLdHeadModel"
+     data-sly-test="${model.available}">
+<script type="application/ld+json">${model.json @ context='unsafe'}</script>
+</sly>

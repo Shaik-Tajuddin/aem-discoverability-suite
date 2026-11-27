@@ -1,5 +1,7 @@
 # AEM Discoverability Suite — Architecture
 
+> **SUPERSEDED for v1 implementation.** Source of truth is [`docs/plan/`](plan/). This document describes an earlier activation/`/var`/dashboard model that is **out of scope for v1**. Do not implement from this file.
+
 **Product:** AEM Discoverability Suite
 **Repository:** `aem-discoverability-suite`
 **groupId / Java package:** `com.aem.discoverability`

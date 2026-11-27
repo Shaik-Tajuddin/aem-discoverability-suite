@@ -1,7 +1,8 @@
 # Master Prompt — Build the AEM Discoverability Suite
 
-> Use this prompt with a coding agent (for example Claude Code) at the root of an empty folder.
-> Keep `ARCHITECTURE.md` in the repository root; it is the source of truth for every decision below.
+> **SUPERSEDED for v1 implementation.** Source of truth is [`docs/plan/`](plan/) and [`tasks/plan.md`](../tasks/plan.md). This prompt targets an earlier activation/`/var`/dashboard model that is **out of scope for v1**. Do not implement from this file.
+
+> Historical note: this prompt was written for scaffolding from an empty folder against the old architecture doc.
 
 ---
 

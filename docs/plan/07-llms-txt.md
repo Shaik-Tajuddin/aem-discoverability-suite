@@ -3,7 +3,7 @@
 **Feature area:** GEO / site-level context discovery  
 **Audience:** Content strategists, SEO/GEO administrators, AEM configuration owners  
 **Generation:** On-demand, Publish-side  
-**Status:** Design guide — implementation not yet authorized
+**Status:** Phase 7 implemented (2026-11-27) — see `tasks/plan.md` / CHANGELOG
 
 ## 1. Purpose and expectations
 

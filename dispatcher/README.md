@@ -3,6 +3,8 @@
 This module contains the basic dispatcher configurations. The configuration gets bundled in a ZIP file,
 and can be downloaded and unzipped to a local folder for development.
 
+**Discoverability Suite reference snippets** (merge into customer overlays; do not replace AMS immutables): see [`snippets/`](snippets/) and [`snippets/ENABLEMENT.md`](snippets/ENABLEMENT.md). Public rewrites live in `src/conf.d/rewrites/discoverability_rewrite.rules`.
+
 ## File Structure
 
 ```

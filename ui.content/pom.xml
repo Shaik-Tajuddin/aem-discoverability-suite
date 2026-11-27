@@ -53,7 +53,7 @@
                     <group>com.aem.discoverability</group>
                     <name>aem-discoverability-suite.ui.content</name>
                     <packageType>content</packageType>
-                    <accessControlHandling>merge</accessControlHandling>
+                    <accessControlHandling>ignore</accessControlHandling>
                     <validatorsSettings>
                         <jackrabbit-filter>
                             <options>

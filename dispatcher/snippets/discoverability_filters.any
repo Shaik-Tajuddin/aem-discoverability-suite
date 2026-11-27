@@ -1,0 +1,21 @@
+# Reference filter rules for Discoverability Suite public routes.
+# Append into the publish farm /filter section AFTER the AMS deny rules
+# (Dispatcher uses last matching rule). Do not overwrite immutable AMS filters wholesale.
+
+# robots.txt → /content/<project>.robots.txt
+/0200 { /type "allow" /method "GET" /url "/content/*.robots.txt" }
+
+# llms.txt → /content/<project>.llms.txt
+/0201 { /type "allow" /method "GET" /url "/content/*.llms.txt" }
+
+# sitemap index / single urlset → /content/<project>.sitemap.xml
+/0202 { /type "allow" /method "GET" /url "/content/*.sitemap.xml" }
+
+# sitemap partition → /content/<project>.sitemap.<n>.xml
+# Must win over the AMS numeric-selector deny for .xml
+/0203 { /type "allow" /method "GET" /url "/content/*.sitemap.*.xml" }
+
+# page Markdown → /content/<project>/.../<page>.md
+/0204 { /type "allow" /method "GET" /url "/content/*.md" }
+
+# Keep blocked: /bin, /system, authoring consoles, and other *.txt / *.xml under /content.

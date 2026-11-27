@@ -4,9 +4,9 @@
 **Architecture baseline:** AEM Discoverability Suite — Architecture Baseline 1.0  
 **Target:** AEM 6.5.17+ · Java 11 runtime  
 **Generation:** On-demand on Publish  
-**Status:** Design and author guidance only — implementation is not yet authorized
+**Status:** Approved source of truth for v1 — coding authorized per `tasks/plan.md`
 
-> These guides explain the intended v1 behavior, configuration responsibilities, author workflows, best practices, sample outputs, and validation. They do not define final Java APIs, exact CA Config resource names, dialog field names, servlet registrations, or Dispatcher syntax. Those belong in the detailed technical specification.
+> These guides explain the intended v1 behavior, configuration responsibilities, author workflows, best practices, sample outputs, and validation. They do not define final Java APIs, exact CA Config resource names, dialog field names, servlet registrations, or Dispatcher syntax. Those are finalized during the owning implementation phase.
 
 ## 1. Feature catalogue
 
@@ -80,4 +80,4 @@ A page appearing in AEM Author does not automatically mean it belongs in public 
 
 ## 8. Approval boundary
 
-This documentation set does not authorize coding or deployment. The next engineering artifact should be a detailed technical implementation specification. Coding begins only after explicit approval.
+Implementation follows `tasks/plan.md` (approved). Exact field names, servlet registrations, and route mappings are finalized in the owning phase and recorded in Decisions / CHANGELOG.

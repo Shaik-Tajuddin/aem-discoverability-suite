@@ -3,7 +3,7 @@
 **Feature area:** SEO  
 **Audience:** SEO administrators, AEM configuration owners, content authors  
 **Generation:** On-demand on Publish  
-**Status:** Design guide — implementation not yet authorized
+**Status:** Phase 4 implemented (2026-11-27) — see `tasks/plan.md` / CHANGELOG
 
 ## 1. Purpose
 

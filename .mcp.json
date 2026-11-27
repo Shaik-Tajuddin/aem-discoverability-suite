@@ -1,0 +1,23 @@
+{
+  "servers": {
+    "author": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "aem-mcp-server",
+        "-t",
+        "stdio",
+        "-H",
+        "http://localhost:4502",
+        "-u",
+        "admin",
+        "-p",
+        "admin"
+      ]
+    },
+    "chrome-devtools": {
+      "command": "npx",
+      "args": ["-y", "chrome-devtools-mcp@latest"]
+    }
+  }
+}

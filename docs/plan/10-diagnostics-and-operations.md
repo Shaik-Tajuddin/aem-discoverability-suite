@@ -2,7 +2,7 @@
 
 **Feature area:** Cross-cutting operations  
 **Audience:** AEM administrators, release engineers, support teams  
-**Status:** Design guide — implementation not yet authorized
+**Status:** Phase 10 implemented (2026-11-27) — see `tasks/plan.md` / CHANGELOG / `docs/generation-events.md`
 
 ## 1. Purpose
 

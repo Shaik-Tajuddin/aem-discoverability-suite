@@ -2,7 +2,7 @@
 
 **Feature area:** Shared platform / SEO  
 **Audience:** Authors, translation managers, AEM administrators, SEO owners  
-**Status:** Design guide — implementation not yet authorized
+**Status:** Phase 3 implemented (2026-11-27) — see `tasks/plan.md`
 
 ## 1. Purpose
 
